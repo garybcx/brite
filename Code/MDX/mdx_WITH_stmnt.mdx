@@ -1,0 +1,19 @@
+with  member [exp to rev ratio] as
+' 
+      IIf
+    (
+       IsEmpty
+       (
+          [Measures].[Sales Amount]
+       ), 
+       Null, 
+       ( 
+         [Measures].[Amount], [Account].[Accounts].[Account Level 03].&[58] 
+       )
+       / 
+       [Measures].[Sales Amount]
+    )'
+       
+ select  ([Account].[Accounts].members,[exp to rev ratio]) on 0 
+ from  [Adventure Works]    
+       

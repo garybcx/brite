@@ -1,0 +1,4 @@
+select non empty{[Product].[Product Categories].[Category]} on 1,
+{[Measures].[Internet Order Count]} on 0
+from [Adventure Works]
+where ([Ship Date].[Month of Year].&[3], [Employee].[Employees].&[112])
